@@ -1,0 +1,129 @@
+/*Scss variable*/
+$n : navy;
+
+/*Scss inheritance*/
+%mess{
+  color: $n;
+  text-align: left;
+}
+
+/*Css Properties*/
+html{
+    width:1400px;
+    height:500px;
+    display: flex;
+}
+
+body {
+	width: 100%;
+  background-color: #D2D4C8;
+	height:100%;
+}
+
+p {
+    @extend %mess;
+    width: 90%;
+}
+/*Sass nesting*/
+div {
+     font-size: 22px;
+     p {
+         color: $n;
+     }
+     ul {
+         color: $n;
+     }
+ }
+
+ul{
+color: $n;
+}
+
+
+table {
+                border: 2px solid black;
+                border-collapse: collapse;
+                width: 50%;
+                margin : auto;
+
+            }
+
+            th, td {
+                border: 0.5px solid black;
+                padding: 5px;
+                text-align: center;
+            }
+
+            th {
+                color: white;
+                background-color: black;
+            }
+/*id Selector*/
+#ciudad {
+    @extend %mess;
+    font-size: 22px;
+    width: 90%;
+    font-weight: bold;
+}
+
+
+
+#list {
+      ul {
+          li {
+              background-color: #F2F2F2;
+              color: #404040;
+           }
+       }
+   }
+
+/*.class Selector*/
+.nav-link {
+	font-size: 15px;
+}
+
+/*Css Selectors*/
+h1,h3{
+  text-align: center;
+  color: $n;
+}
+
+p, ul {
+    font-size: 22px;
+    color: $n;
+}
+
+li > ul {
+     color: red;
+ }
+
+ ol > ul {
+      color: red;
+  }
+
+
+
+/*@ media*/
+@media (max-width: 700px) {
+  body {
+      background-color: gray;
+  }
+  p {
+      color: $n;
+      text-align: left;
+      font-size: 12px;
+      width: 90%;
+  }
+}
+
+.container {
+     display: flex;
+     flex-wrap: wrap;
+ }
+
+ .grid {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    grid-template-columns: 200px 200px auto;
+}
